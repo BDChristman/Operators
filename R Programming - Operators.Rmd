@@ -1,0 +1,182 @@
+---
+title: "R Programming - Operators"
+author: "Brian D. Christman"
+date: "1/30/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Addition Operator +
+```{r}
+value <- 5 + 9
+print(value)
+
+list1 <- c(1,2,3)
+list2 <- c(4,5,6)
+
+print(list1 + list2)
+```
+## Not operator !
+```{r}
+paper <- c(TRUE, FALSE)
+print(!paper)
+```
+
+## Tilde Operator ~
+```{r}
+model <-  lm(speed ~ dist, data=cars)
+summary(model)
+
+format <- outcome ~ predictor
+print(format)
+```
+## Help Operator ?
+```{r}
+?glm
+```
+
+## Sequence Operator :
+```{r}
+sequence <- c(1:10)
+print(sequence)
+```
+
+## Multiplication Operator *
+```{r}
+multiplication <- 17 * 9
+print(multiplication)
+
+print(list1 * list2)
+```
+## Division Operator /
+```{r}
+division <- 146 / 2
+print(division)
+
+print(list2 / list1)
+```
+
+## Exponentiation Operator ^
+```{r}
+exponentiation <- 16 ^ 9
+print(exponentiation)
+
+print(list1 ^ list2)
+```
+## Special Binary Operator %x%
+```{r}
+'%new_operator%' <- function(x,y) {((x * y + x) / (y+x)) * (x/y)}
+
+5 %new_operator% 6
+```
+%x%    Special binary operators, x can be replaced by any valid name
+
+## Remainder Operator %%
+```{r}
+remainder <- 15 %% 7
+print(remainder)
+
+print(list2 %% list1)
+```
+## Integer Division Operator %/%
+```{r}
+intdivide <- 15 %/% 7
+print(intdivide)
+
+print(list2 %/% list1)
+```
+# Matrix Multiplication Operator %*%
+```{r}
+matrix1 <- matrix(1:4, nrow = 2, ncol = 2)
+
+print(matrix1 %*% matrix1)
+```
+## Outer Product Operator %o%
+```{r}
+1:5 %o% 1:4
+```
+
+## Kronecker Product Operator %x% 
+```{r}
+1:2 %x% 1:3
+```
+
+## Matching Operator %in%
+```{r}
+2 %in% list1
+2 %in% list2
+```
+## Less Than Operator <
+```{r}
+4 < 19
+```
+
+## Greater Than Operator >
+```{r}
+4 > 19
+```
+## Equal to Operator ==
+```{r}
+4 == 19
+TRUE == FALSE
+```
+# Greater than or Equal to Operator >=
+```{r}
+4 >= 19
+
+list1 >= list2
+```
+# Less than or Equal to Operator <=
+```{r}
+4 <= 19
+
+list1 <= list2
+```
+## Vectorized And Operator &
+```{r}
+list1 & list2
+```
+## Non-Vectorized And Operator &&
+
+```{r}
+list1 && list2
+```
+
+## Vectorized Or Operator |
+```{r}
+for (i in 1:10)
+  if(i %% 2 == 0 | i == 5){
+    print(i)
+  }
+
+list1 | list2  
+```
+
+
+## Non-Vectorized Or Operator ||
+```{r}
+list1 || list2
+
+c(F,T) || c(F,F)
+```
+
+## Left Assignment Operator <-
+```{r}
+list3 <- list1 + list2
+print(list3)
+```
+
+## Right Assignment Operator ->
+```{r}
+list3 + list2 -> list4
+print(list4)
+```
+## List Subset Operator $
+```{r}
+cars$speed
+```
+
+In an Rmarkdown document try out each of the operators shown above. Understand the order of prioritization of the operators in an expression while doing this homework. Try out different things and see if you get what you thought will get.  Submit the .html file.
